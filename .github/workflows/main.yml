@@ -11,6 +11,7 @@ on:
         options:
           - ''
           - 'dotnet-sdk'
+          - 'grafana'
         default: ''
 
 jobs:
@@ -28,6 +29,11 @@ jobs:
             repo: mcr.microsoft.com
             image: dotnet/sdk
             dest-image: dotnet-sdk
+            multi-arch: system
+          - name: grafana
+            repo: docker.io
+            image: grafana/grafana
+            dest-image: grafana
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
