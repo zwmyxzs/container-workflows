@@ -27,7 +27,7 @@ jobs:
           - name: dotnet-sdk
             repo: mcr.microsoft.com
             image: dotnet/sdk
-            dest-image: dotnet/sdk
+            dest-image: dotnet-sdk
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
