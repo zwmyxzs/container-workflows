@@ -15,6 +15,7 @@ on:
           - 'descheduler'
           - 'kube-state-metrics'
           - 'sealed-secrets-controller'
+          - 'promtail'
         default: ''
 
 jobs:
@@ -53,6 +54,12 @@ jobs:
             image: bitnami/sealed-secrets-controller
             dest-image: sealed-secrets-controller
             multi-arch: system
+          - name: promtail
+            repo: docker.io
+            image: grafana/promtail
+            dest-image: promtail
+            multi-arch: system
+            
     steps:
       - uses: actions/checkout@v4
           
