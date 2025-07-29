@@ -14,6 +14,7 @@ on:
           - 'grafana'
           - 'descheduler'
           - 'kube-state-metrics'
+          - 'sealed-secrets-controller'
         default: ''
 
 jobs:
@@ -46,6 +47,11 @@ jobs:
             repo: registry.k8s.io
             image: kube-state-metrics/kube-state-metrics
             dest-image: kube-state-metrics
+            multi-arch: system
+          - name: sealed-secrets-controller
+            repo: docker.io
+            image: bitnami/sealed-secrets-controller
+            dest-image: sealed-secrets-controller
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
