@@ -23,6 +23,7 @@ on:
           - 'thanos'
           - 'prometheus'
           - 'loki'
+          - 'alloy'
         default: ''
 
 jobs:
@@ -100,6 +101,11 @@ jobs:
             repo: docker.io
             image: grafana/loki
             dest-image: loki
+            multi-arch: system
+          - name: alloy
+            repo: docker.io
+            image: grafana/alloy
+            dest-image: alloy
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
