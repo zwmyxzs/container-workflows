@@ -19,6 +19,7 @@ on:
           - 'node-exporter'
           - 'rabbitmq'
           - 'metrics-server'
+          - 'keycloak'
         default: ''
 
 jobs:
@@ -76,6 +77,11 @@ jobs:
             repo: registry.k8s.io
             image: metrics-server/metrics-server
             dest-image: metrics-server
+            multi-arch: system
+          - name: keycloak
+            repo: quay.io
+            image: keycloak/keycloak
+            dest-image: keycloak
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
