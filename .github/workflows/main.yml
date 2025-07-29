@@ -12,6 +12,7 @@ on:
           - ''
           - 'dotnet-sdk'
           - 'grafana'
+          - 'descheduler'
         default: ''
 
 jobs:
@@ -34,6 +35,11 @@ jobs:
             repo: docker.io
             image: grafana/grafana
             dest-image: grafana
+            multi-arch: system
+          - name: descheduler
+            repo: registry.k8s.io
+            image: descheduler/descheduler
+            dest-image: descheduler
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
