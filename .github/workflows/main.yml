@@ -22,6 +22,7 @@ on:
           - 'keycloak'
           - 'thanos'
           - 'prometheus'
+          - 'loki'
         default: ''
 
 jobs:
@@ -94,6 +95,11 @@ jobs:
             repo: docker.io
             image: prom/prometheus
             dest-image: prometheus
+            multi-arch: system
+          - name: loki
+            repo: docker.io
+            image: grafana/loki
+            dest-image: loki
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
