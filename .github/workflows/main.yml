@@ -17,6 +17,7 @@ on:
           - 'sealed-secrets-controller'
           - 'promtail'
           - 'node-exporter'
+          - 'rabbitmq'
         default: ''
 
 jobs:
@@ -64,6 +65,11 @@ jobs:
             repo: docker.io
             image: prom/node-exporter
             dest-image: node-exporter
+            multi-arch: system
+          - name: rabbitmq
+            repo: docker.io
+            image: rabbitmq
+            dest-image: rabbitmq
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
