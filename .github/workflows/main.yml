@@ -18,6 +18,7 @@ on:
           - 'promtail'
           - 'node-exporter'
           - 'rabbitmq'
+          - 'metrics-server'
         default: ''
 
 jobs:
@@ -70,6 +71,11 @@ jobs:
             repo: docker.io
             image: rabbitmq
             dest-image: rabbitmq
+            multi-arch: system
+          - name: metrics-server
+            repo: registry.k8s.io
+            image: metrics-server/metrics-server
+            dest-image: metrics-server
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
