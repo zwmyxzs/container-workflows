@@ -16,6 +16,7 @@ on:
           - 'kube-state-metrics'
           - 'sealed-secrets-controller'
           - 'promtail'
+          - 'node-exporter'
         default: ''
 
 jobs:
@@ -59,7 +60,11 @@ jobs:
             image: grafana/promtail
             dest-image: promtail
             multi-arch: system
-            
+          - name: node-exporter
+            repo: docker.io
+            image: prom/node-exporter
+            dest-image: node-exporter
+            multi-arch: system
     steps:
       - uses: actions/checkout@v4
           
