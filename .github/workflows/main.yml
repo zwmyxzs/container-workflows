@@ -21,6 +21,7 @@ on:
           - 'metrics-server'
           - 'keycloak'
           - 'thanos'
+          - 'prometheus'
         default: ''
 
 jobs:
@@ -88,6 +89,11 @@ jobs:
             repo: quay.io
             image: thanos/thanos
             dest-image: thanos
+            multi-arch: system
+          - name: prometheus
+            repo: docker.io
+            image: prom/prometheus
+            dest-image: prometheus
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
