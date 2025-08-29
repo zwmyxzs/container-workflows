@@ -24,7 +24,7 @@ on:
           - 'prometheus'
           - 'loki'
           - 'alloy'
-          - 'traefik'
+          - 'klipper'
         default: ''
 
 jobs:
