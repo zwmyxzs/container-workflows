@@ -24,6 +24,7 @@ on:
           - 'prometheus'
           - 'loki'
           - 'alloy'
+          - 'traefik'
         default: ''
 
 jobs:
@@ -106,6 +107,11 @@ jobs:
             repo: docker.io
             image: grafana/alloy
             dest-image: alloy
+            multi-arch: system
+          - name: klipper
+            repo: registry-1.docker.io
+            image: rancher/klipper-helm
+            dest-image: klipper-helm
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
