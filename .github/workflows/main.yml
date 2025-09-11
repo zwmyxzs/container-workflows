@@ -25,6 +25,7 @@ on:
           - 'loki'
           - 'alloy'
           - 'klipper'
+          - 'rabbitmq'
         default: ''
 
 jobs:
@@ -112,6 +113,11 @@ jobs:
             repo: registry-1.docker.io
             image: rancher/klipper-helm
             dest-image: klipper-helm
+            multi-arch: system
+          - name: rabbitmq
+            repo: registry-1.docker.io
+            image: rabbitmq:4.1.4-management
+            dest-image: rabbitmq:4.1.4-management
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
