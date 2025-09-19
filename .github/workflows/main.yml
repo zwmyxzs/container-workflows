@@ -25,6 +25,7 @@ on:
           - 'loki'
           - 'alloy'
           - 'klipper'
+          - 'sftpgo'
         default: ''
 
 jobs:
@@ -47,6 +48,11 @@ jobs:
             repo: docker.io
             image: grafana/grafana
             dest-image: grafana
+            multi-arch: system
+          - name: sftpgo
+            repo: docker.io
+            image: drakkan/sftpgo
+            dest-image: sftpgo
             multi-arch: system
           - name: descheduler
             repo: registry.k8s.io
