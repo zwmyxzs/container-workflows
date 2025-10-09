@@ -26,6 +26,7 @@ on:
           - 'alloy'
           - 'klipper'
           - 'sftpgo'
+          - 'nginx'
         default: ''
 
 jobs:
@@ -83,6 +84,11 @@ jobs:
             repo: docker.io
             image: rabbitmq
             dest-image: rabbitmq
+            multi-arch: system
+          - name: nginx
+            repo: docker.io
+            image: library/nginx
+            dest-image: nginx
             multi-arch: system
           - name: metrics-server
             repo: registry.k8s.io
