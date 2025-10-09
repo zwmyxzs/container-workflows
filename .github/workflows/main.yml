@@ -87,7 +87,7 @@ jobs:
             multi-arch: system
           - name: nginx
             repo: docker.io
-            image: library/nginx
+            image: nginx
             dest-image: nginx
             multi-arch: system
           - name: metrics-server
