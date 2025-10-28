@@ -27,6 +27,7 @@ on:
           - 'klipper'
           - 'sftpgo'
           - 'nginx'
+          - 'opentelemetry-collector'
         default: ''
 
 jobs:
@@ -89,6 +90,11 @@ jobs:
             repo: docker.io
             image: nginx
             dest-image: nginx
+            multi-arch: system
+          - name: opentelemetry-collector
+            repo: docker.io
+            image: otel/opentelemetry-collector
+            dest-image: opentelemetry-collector
             multi-arch: system
           - name: metrics-server
             repo: registry.k8s.io
