@@ -12,6 +12,7 @@ on:
           - ''
           - 'dotnet-sdk'
           - 'grafana'
+          - 'grafana-image-renderer'
           - 'descheduler'
           - 'kube-state-metrics'
           - 'sealed-secrets-controller'
@@ -50,6 +51,11 @@ jobs:
             repo: docker.io
             image: grafana/grafana
             dest-image: grafana
+            multi-arch: system
+          - name: grafana-image-renderer
+            repo: docker.io
+            image: grafana/grafana-image-renderer
+            dest-image: grafana-image-renderer
             multi-arch: system
           - name: sftpgo
             repo: docker.io
