@@ -29,7 +29,7 @@ on:
           - 'sftpgo'
           - 'nginx'
           - 'opentelemetry-collector'
-          - 'nexus'
+          - 'nexus3'
         default: ''
 
 jobs:
@@ -133,7 +133,7 @@ jobs:
             image: grafana/alloy
             dest-image: alloy
             multi-arch: system
-          - name: nexus
+          - name: nexus3
             repo: docker.io
             image: sonatype/nexus3
             dest-image: nexus3
