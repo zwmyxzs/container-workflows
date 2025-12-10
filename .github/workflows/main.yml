@@ -29,6 +29,7 @@ on:
           - 'sftpgo'
           - 'nginx'
           - 'opentelemetry-collector'
+          - 'nexus'
         default: ''
 
 jobs:
@@ -131,6 +132,11 @@ jobs:
             repo: docker.io
             image: grafana/alloy
             dest-image: alloy
+            multi-arch: system
+          - name: nexus
+            repo: docker.io
+            image: sonatype/nexus3
+            dest-image: nexus3
             multi-arch: system
           - name: klipper
             repo: registry-1.docker.io
