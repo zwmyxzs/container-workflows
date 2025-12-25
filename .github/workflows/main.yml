@@ -31,6 +31,7 @@ on:
           - 'opentelemetry-collector'
           - 'nexus3'
           - 'sonarqube'
+          - 'nocobase'
         default: ''
 
 jobs:
@@ -143,6 +144,11 @@ jobs:
             repo: docker.io
             image: sonarqube
             dest-image: sonarqube
+            multi-arch: system
+          - name: nocobase
+            repo: docker.io
+            image: nocobase/nocobase
+            dest-image: nocobase
             multi-arch: system
           - name: klipper
             repo: registry-1.docker.io
