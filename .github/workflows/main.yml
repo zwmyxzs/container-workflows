@@ -155,7 +155,7 @@ jobs:
             repo: ghcr.io
             image: resmoio/kubernetes-event-exporter
             dest-image: kubernetes-event-exporter
-            multi-arch: system
+            multi-arch: all
           - name: klipper
             repo: registry-1.docker.io
             image: rancher/klipper-helm
