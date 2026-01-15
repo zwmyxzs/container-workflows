@@ -32,6 +32,7 @@ on:
           - 'nexus3'
           - 'sonarqube'
           - 'nocobase'
+          - 'kubernetes-event-exporter'
         default: ''
 
 jobs:
@@ -149,6 +150,11 @@ jobs:
             repo: docker.io
             image: nocobase/nocobase
             dest-image: nocobase
+            multi-arch: system
+          - name: kubernetes-event-exporter
+            repo: ghcr.io
+            image: resmoio/kubernetes-event-exporter
+            dest-image: kubernetes-event-exporter
             multi-arch: system
           - name: klipper
             repo: registry-1.docker.io
