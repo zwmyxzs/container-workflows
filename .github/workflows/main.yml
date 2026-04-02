@@ -120,8 +120,8 @@ jobs:
           - name: prometheus-config-reloader
             repo: quay.io
             image: prometheus-operator/prometheus-config-reloader
-            dest-image: keycloak
-            multi-arch: system
+            dest-image: prometheus-config-reloader
+            multi-arch: all
           - name: thanos
             repo: quay.io
             image: thanos/thanos
@@ -141,7 +141,7 @@ jobs:
             repo: docker.io
             image: grafana/alloy
             dest-image: alloy
-            multi-arch: system
+            multi-arch: all
           - name: nexus3
             repo: docker.io
             image: sonatype/nexus3
