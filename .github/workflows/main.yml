@@ -33,6 +33,7 @@ on:
           - 'sonarqube'
           - 'nocobase'
           - 'kubernetes-event-exporter'
+          - 'prometheus-config-reloader'
         default: ''
 
 jobs:
@@ -114,6 +115,11 @@ jobs:
           - name: keycloak
             repo: quay.io
             image: keycloak/keycloak
+            dest-image: keycloak
+            multi-arch: system
+          - name: prometheus-config-reloader
+            repo: quay.io
+            image: prometheus-operator/prometheus-config-reloader
             dest-image: keycloak
             multi-arch: system
           - name: thanos
