@@ -34,6 +34,7 @@ on:
           - 'nocobase'
           - 'kubernetes-event-exporter'
           - 'prometheus-config-reloader'
+          - 'node'
         default: ''
 
 jobs:
@@ -166,6 +167,11 @@ jobs:
             repo: registry-1.docker.io
             image: rancher/klipper-helm
             dest-image: klipper-helm
+            multi-arch: system
+          - name: node
+            repo: docker.io
+            image: node
+            dest-image: node
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
