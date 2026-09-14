@@ -35,6 +35,7 @@ on:
           - 'kubernetes-event-exporter'
           - 'prometheus-config-reloader'
           - 'node'
+          - 'netshoot'
         default: ''
 
 jobs:
@@ -172,6 +173,11 @@ jobs:
             repo: docker.io
             image: node
             dest-image: node
+            multi-arch: system
+          - name: netshoot
+            repo: docker.io
+            image: nicolaka/netshoot
+            dest-image: netshoot
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
