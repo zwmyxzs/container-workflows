@@ -36,6 +36,7 @@ on:
           - 'prometheus-config-reloader'
           - 'node'
           - 'netshoot'
+          - 'new-api'
         default: ''
 
 jobs:
@@ -178,6 +179,11 @@ jobs:
             repo: docker.io
             image: nicolaka/netshoot
             dest-image: netshoot
+            multi-arch: system
+          - name: new-api
+            repo: docker.io
+            image: calciumion/new-api
+            dest-image: new-api
             multi-arch: system
     steps:
       - uses: actions/checkout@v4
